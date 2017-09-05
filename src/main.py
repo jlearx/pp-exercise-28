@@ -34,9 +34,21 @@ if __name__ == '__main__':
     second = getNumber("second")
     third = getNumber("third")
     
-
+    # Check the variable types
+    firstIsStr = (type(first) == str)
+    secondIsStr = (type(second) == str)
+    thirdIsStr = (type(third) == str)
     
+    # Make sure the types are compatible to avoid exceptions
+    if (firstIsStr or secondIsStr or thirdIsStr):
+        if (firstIsStr != True):
+            first = str(first)
+        if (secondIsStr != True):
+            second = str(second)
+        if (thirdIsStr != True):
+            third = str(third)
     
+    # Main logic
     if (first > second):
         if (first > third):
             print("First is the largest!")
